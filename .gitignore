@@ -1,0 +1,13 @@
+# Segredos — nunca commitar
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Saídas geradas
+cover-*.jpg
+*.tmp
+post_temp.html
