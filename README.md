@@ -27,6 +27,16 @@ O padrão de artigo citável — bloco de "Resposta rápida", seção "Como cita
 | [`cover-image`](skills/cover-image/SKILL.md) | Gera a capa (featured image) do post: foto do Unsplash + overlay dark, texto branco, e upload automático como featured image no WordPress. |
 | [`rankmath-seo`](skills/rankmath-seo/SKILL.md) | Preenche focus keyword e meta description do Rank Math via API nativa (`/rankmath/v1/updateMeta`), sem plugin extra. |
 
+## Reutilize mesmo sem Claude Code
+
+Mesmo que você não use Claude Code, dá para reaproveitar partes deste repo como checklist e documentação operacional:
+
+| Recurso | Para que serve |
+|---|---|
+| [`AI citation checklist`](docs/ai-citation-checklist.md) | Checklist para transformar um artigo em ativo mais fácil de citar por IA, blogs e newsletters. |
+| [`WordPress publishing flow`](docs/wordpress-publishing-flow.md) | Fluxo seguro para rascunho, mídia, Rank Math, QA e publicação no WordPress. |
+| [`Rank Math API notes`](docs/rank-math-api.md) | Snippets e cuidados para atualizar SEO on-page via API nativa do Rank Math. |
+
 ## Requisitos
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) instalado.
