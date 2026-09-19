@@ -1,13 +1,13 @@
 ---
 name: backlinks
-description: Cria artigos de estatísticas data-driven projetados para atrair backlinks e citações de LLMs (ChatGPT, Perplexity, Google AI Overviews). Pesquisa dados de fontes primárias, organiza em seções temáticas com tabelas, e entrega o conteúdo em HTML pronto para publicar via WP API. Use quando quiser criar um artigo de estatísticas, roundup de dados, ou conteúdo do tipo "X+ estatísticas sobre [tema]".
+description: Cria artigos de estatísticas verificáveis para facilitar referência, backlink e citação por humanos ou sistemas de IA. Use para roundup de dados, relatório de mercado ou conteúdo "X+ estatísticas". Não use para um guia comum sem base estatística.
 ---
 
 # Backlinks — Artigos de Estatísticas Citáveis
 
 > Skill de produção do viniensina.com.br. Os pedaços específicos do site (classes `.vi-*`, shortcode `[vini_cta]`, slugs internos) estão sinalizados — **troque pelo seu setup**.
 
-**Objetivo:** criar o artigo mais citado sobre o tema — outros blogs e IAs (ChatGPT, Perplexity, Google AI Overviews) devem referenciar os dados daqui.
+**Objetivo:** produzir um ativo de referência útil, verificável e fácil de atribuir. A estrutura reduz atrito de citação, mas não garante ranking, backlink ou menção por IA.
 
 ## Contexto do projeto
 
@@ -65,9 +65,9 @@ Buscas a realizar (adaptar ao tópico):
 - `"[tópico] [plataforma] results [ano]"` (ex: Meta, Google, TikTok)
 - `"[tópico] challenges barriers [ano]"`, `"[tópico] forecast [ano+1]"`
 
-Coletar 60–80 stats brutas → filtrar para 40–55 verificadas.
+Colete dados suficientes para cobrir o tema e filtre com rigor. Qualidade, atualidade e rastreabilidade importam mais do que atingir uma contagem fixa. Só use `X+ estatísticas` no título quando o corpo realmente entregar essa quantidade de dados únicos.
 
-**Resumo de pesquisa (apresentar ao usuário antes de escrever):**
+**Resumo de pesquisa (apresentar antes de escrever quando o trabalho for longo ou depender de decisões editoriais):**
 ```
 Keyword-alvo: "[tópico] estatísticas [ano]"
 Stats: [N brutas → N mantidas] | Fontes: [N Tier 1, N Tier 2]
@@ -169,13 +169,11 @@ O tema injeta sozinho: featured image, H1, meta (autor/data), sidebar, posts rel
 
 > **Ordem verificada em produção:** "Resposta rápida" é o **1º bloco do artigo**, antes até do `vi-highlights`. E a **FAQ vem antes de Metodologia/Fontes**, nunca depois. Escrever já nessa ordem desde o rascunho.
 
-> A **FAQ visível** já vai no corpo desde o rascunho. O **FAQPage JSON-LD** deve ser anexado por um passo separado do seu pipeline, que EXIGE a FAQ visível presente e só acrescenta o `<script>`. Nunca colar o schema à mão.
-
-> ⚠️ **Guard de idempotência:** se o seu script de schema pula a aplicação ao achar a string `FAQPage` no conteúdo, cuidado — um artigo que **menciona "FAQPage" no texto visível** (comum em posts de SEO/GEO) engana o guard e o schema nunca é aplicado. Checar a contagem de `FAQPage` no conteúdo bruto antes e depois.
+> A FAQ visível é opcional e deve responder dúvidas reais sem duplicar o artigo. Desde maio de 2026, o Google não exibe mais rich results de FAQ. Não trate `FAQPage` como ganho de SERP nem adicione schema apenas para "GEO".
 
 > ⚠️ **H1 fantasma:** blocos de código com `#` no início da linha (ex: exemplos de Markdown) viram `<h1>` no WordPress e quebram o QA de "1 H1". Evitar code fence com `#`; usar tabela ou `<code>` inline.
 
-> **Os 3 blocos de citação em IA são INEGOCIÁVEIS — mesmo em satélites/explicadores:** (1) **"Resposta rápida"** (tabela de resposta direta), (2) **"Como citar este [levantamento/guia]"**, (3) **FAQ + FAQPage**. São eles que fazem ChatGPT/Perplexity/AI Overview citarem e atribuírem a página — independente do formato.
+> Para levantamentos, priorize uma resposta direta, fontes rastreáveis, metodologia e uma orientação clara de atribuição. Use FAQ apenas quando melhorar a experiência. Nenhum bloco ou schema, isoladamente, faz um sistema citar a página.
 
 ---
 
@@ -225,7 +223,7 @@ A skill entrega o conteúdo; a publicação segue o pipeline do seu blog:
 
 1. **Rascunho via WP API:** `POST /wp/v2/posts` com `status=draft`, `content` = HTML puro (Passo 3), `slug`, `title`, `excerpt`, `categories`. Sempre `context=edit` e ler/gravar `content` como `raw` (nunca `content.rendered`).
 2. **Capa:** use a skill `cover-image`.
-3. **FAQ + schema:** a FAQ visível já vem do rascunho (antes de Metodologia). Anexe o FAQPage JSON-LD por um passo separado; ele EXIGE a FAQ visível e só acrescenta o `<script>`.
+3. **FAQ:** mantenha uma seção visível somente quando houver perguntas úteis que não dupliquem o corpo. Não dependa de `FAQPage` para rich result no Google.
 4. **Acentuação:** após publicar, checar o corpo e a meta description por acentos comidos (bug recorrente de encoding em algumas APIs). Conferir também se sobrou link markdown cru `[texto](url)` no HTML.
 5. **Rank Math:** use a skill `rankmath-seo`.
 6. **IndexNow:** envie a URL via IndexNow (Bing/Yandex) para acelerar a reindexação.
@@ -237,9 +235,9 @@ A skill entrega o conteúdo; a publicação segue o pipeline do seu blog:
 ## Checklist antes de entregar
 
 - [ ] 5–7 seções temáticas
-- [ ] "Resposta rápida" é o 1º bloco (antes do `vi-highlights`) + "Como citar este levantamento"
-- [ ] FAQ visível posicionada ANTES de Metodologia/Fontes
-- [ ] 40–55 stats únicas
+- [ ] "Resposta rápida", metodologia, fontes e orientação de atribuição são fáceis de localizar
+- [ ] FAQ, se usada, acrescenta valor e não duplica o texto
+- [ ] A quantidade prometida no título corresponde a estatísticas únicas e verificáveis
 - [ ] 60%+ fontes Tier 1
 - [ ] Nenhuma stat sem fonte rastreável
 - [ ] 3–5 links internos no total (não um por seção), **slug confirmado ao vivo**

@@ -1,16 +1,17 @@
 # AI Citation Content Checklist
 
-Use este checklist para revisar artigos que precisam ser citáveis por blogs, newsletters, ChatGPT, Perplexity, Google AI Overviews, Copilot e outros sistemas de resposta.
+Use este checklist para revisar artigos que precisam ser verificáveis e fáceis de referenciar por blogs, newsletters e sistemas de resposta.
 
 Ele não substitui pesquisa, autoridade ou distribuição. O objetivo é reduzir atrito para quem precisa entender, citar e atribuir seu conteúdo.
 
-## Blocos obrigatórios
+Não existe marcação especial que garanta visibilidade em busca generativa. Para o Google, SEO tradicional, conteúdo original, indexabilidade e experiência de página continuam sendo a base. Consulte o [guia oficial para recursos de IA](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide).
+
+## Resposta e atribuição
 
 - [ ] **Resposta rápida** aparece no primeiro bloco útil do artigo.
 - [ ] A resposta rápida entrega números, definição ou conclusão em formato fácil de copiar.
 - [ ] Existe uma seção **Como citar** com sugestão clara de atribuição.
-- [ ] Existe FAQ visível no corpo do artigo.
-- [ ] A FAQ pode virar `FAQPage` JSON-LD sem inventar perguntas novas.
+- [ ] FAQ foi incluída somente se acrescenta dúvidas reais sem repetir o corpo.
 - [ ] O artigo tem data de atualização ou período de coleta.
 - [ ] A URL final é estável, curta e descritiva.
 
@@ -24,7 +25,7 @@ Ele não substitui pesquisa, autoridade ou distribuição. O objetivo é reduzir
 - [ ] Tabelas incluem coluna de fonte.
 - [ ] Links externos usam a fonte original sempre que possível.
 
-## Estrutura GEO
+## Estrutura e legibilidade
 
 - [ ] A primeira seção responde diretamente à intenção principal.
 - [ ] H2s usam perguntas ou descrições claras.
@@ -33,6 +34,7 @@ Ele não substitui pesquisa, autoridade ou distribuição. O objetivo é reduzir
 - [ ] O conteúdo inclui tabelas, listas e trechos escaneáveis.
 - [ ] Parágrafos são curtos.
 - [ ] A conclusão resume implicações, não repete a introdução.
+- [ ] A página oferece algo além de uma síntese comoditizada: dado próprio, teste, experiência, metodologia ou interpretação original.
 
 ## Linkabilidade
 
@@ -51,5 +53,14 @@ Ele não substitui pesquisa, autoridade ou distribuição. O objetivo é reduzir
 - [ ] Há exatamente um H1 na página pública.
 - [ ] Canonical aponta para a URL final.
 - [ ] Meta description resume o valor do artigo.
-- [ ] Schema foi aplicado somente depois da FAQ visível existir.
+- [ ] Structured data, quando usado, corresponde ao conteúdo visível e a um tipo atualmente suportado.
+- [ ] A página funciona bem no mobile, inclusive tabelas e imagens.
+- [ ] Não há schema duplicado nem caracteres corrompidos.
+
+## O que não tratar como requisito
+
+- [ ] Não há promessa de ranking ou citação baseada apenas em formato.
+- [ ] `llms.txt` não é apresentado como fator do Google; o Google declara que não o usa para visibilidade ou ranking.
+- [ ] O texto não foi artificialmente fragmentado em "chunks" para agradar sistemas de IA.
+- [ ] `FAQPage` não é apresentado como rich result do Google: o recurso deixou de ser exibido em maio de 2026.
 

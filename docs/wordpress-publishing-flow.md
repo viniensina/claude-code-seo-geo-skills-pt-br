@@ -2,7 +2,7 @@
 
 Fluxo seguro para publicar conteúdo de SEO/GEO no WordPress usando REST API, mídia, Rank Math e revisão humana.
 
-O princípio é simples: criar primeiro como rascunho, validar tudo e só depois publicar.
+O princípio é simples: criar primeiro como rascunho, validar tudo e só depois publicar com autorização. Para páginas existentes, faça backup do conteúdo bruto antes de sobrescrever.
 
 ## 1. Preparar ambiente
 
@@ -20,6 +20,7 @@ Boas práticas:
 - Usar Application Password do WordPress, não senha principal.
 - Usar usuário com permissão mínima suficiente.
 - Validar em rascunho antes de publicar.
+- Ler e gravar `content.raw` com `context=edit`; nunca reconstruir um post a partir de `content.rendered`.
 
 ## 2. Criar rascunho
 
@@ -111,6 +112,8 @@ Antes de publicar:
 
 ## 6. Publicar
 
+Publicação ao vivo é uma mudança externa. Só avance quando o usuário tiver pedido a publicação ou aprovado claramente o rascunho.
+
 Quando o rascunho estiver validado:
 
 ```json
@@ -125,12 +128,16 @@ Depois da publicação:
 - Validar canonical.
 - Conferir se a página está indexável.
 - Conferir H1 único.
+- Conferir a página no mobile e garantir que tabelas não gerem overflow global.
+- Conferir CTA, caracteres acentuados e ausência de Markdown cru.
 - Enviar IndexNow se o site usa Rank Math/IndexNow.
 
 ## 7. Pós-publicação
 
 - Atualizar links internos de posts relacionados.
-- Adicionar ao `llms.txt`, se você mantém um.
+- Adicionar ao `llms.txt` apenas se você o mantém para serviços que o utilizam. O Google declara que `llms.txt` não ajuda nem prejudica visibilidade ou ranking no Google Search.
 - Monitorar Google Search Console.
 - Revisar se imagens, CTA e tabelas estão bons no mobile.
+- Confirmar recrawl posterior antes de atribuir efeito à publicação.
+- Para refreshes, comparar janelas equivalentes e evitar novas mudanças durante a maturação.
 
