@@ -59,6 +59,8 @@ Incorporar o ângulo 10x como seção ou destaque diferenciado no artigo.
 
 **Tier 3 — proibido:** blogs citando blogs, stats sem metodologia rastreável.
 
+Para cada dado mantido, registre: organização, URL original, publicação/atualização, período medido, país ou população, tamanho da amostra quando disponível, unidade e observações metodológicas. Não transforme uma pesquisa global, uma base comercial ou um recorte de clientes em estatística do Brasil sem declarar o escopo.
+
 Buscas a realizar (adaptar ao tópico):
 - `"[tópico] statistics [ano]"`, `"[tópico] market size [ano]"`, `"[tópico] adoption report [ano]"`
 - `"[tópico] ROI statistics [ano]"`, `"[tópico] performance data [ano]"`
@@ -228,6 +230,18 @@ A skill entrega o conteúdo; a publicação segue o pipeline do seu blog:
 5. **Rank Math:** use a skill `rankmath-seo`.
 6. **IndexNow:** envie a URL via IndexNow (Bing/Yandex) para acelerar a reindexação.
 
+### Acompanhamento após publicar
+
+1. Salve baseline de GSC e, quando disponível, Bing AI Performance.
+2. Registre a data da publicação ou edição e preserve os CSVs brutos.
+3. Confirme crawl/recrawl antes de interpretar mudança.
+4. Compare janelas equivalentes; em exportações móveis, documente sobreposição e número real de datas retornadas.
+5. No Bing, analise visão geral, páginas e grounding queries separadamente. Os totais podem não coincidir por amostragem e agregação.
+6. Trate Citation Share, Intent e Topic como sinais da plataforma. Citação não equivale a clique, sessão, ranking, backlink ou conversão.
+7. Relate ganho, perda e resultado inconclusivo. Não atribua causalidade a uma única mudança sem desenho de teste adequado.
+
+Referência operacional: [`../../docs/bing-ai-performance-methodology.md`](../../docs/bing-ai-performance-methodology.md).
+
 > Regra dura: post no WP = **conteúdo apenas**. Nunca DOCTYPE/html/head/body, nunca `<style>` global, nunca CSS de tema.
 
 ---
@@ -240,6 +254,7 @@ A skill entrega o conteúdo; a publicação segue o pipeline do seu blog:
 - [ ] A quantidade prometida no título corresponde a estatísticas únicas e verificáveis
 - [ ] 60%+ fontes Tier 1
 - [ ] Nenhuma stat sem fonte rastreável
+- [ ] Escopo de cada dado documentado: período, país/população, amostra e unidade quando disponíveis
 - [ ] 3–5 links internos no total (não um por seção), **slug confirmado ao vivo**
 - [ ] 1+ link externo por seção
 - [ ] Insight ≠ repetição da tabela

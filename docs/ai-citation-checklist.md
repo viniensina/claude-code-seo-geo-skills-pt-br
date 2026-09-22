@@ -24,6 +24,19 @@ Não existe marcação especial que garanta visibilidade em busca generativa. Pa
 - [ ] Números não foram arredondados para dramatizar.
 - [ ] Tabelas incluem coluna de fonte.
 - [ ] Links externos usam a fonte original sempre que possível.
+- [ ] Dados próprios declaram plataforma, janela real retornada, data de exportação e unidade.
+- [ ] Comparações usam janelas equivalentes ou explicam quando há sobreposição/diferença.
+- [ ] Resultado observado está separado de hipótese, ação executada e causalidade.
+
+## Mensuração em plataformas de IA
+
+- [ ] Citação, clique, sessão, conversão, ranking e backlink são reportados como métricas distintas.
+- [ ] O total da visão geral não foi forçado a coincidir com somas por página ou consulta.
+- [ ] Linhas ausentes em uma exportação não foram interpretadas automaticamente como zero.
+- [ ] Grounding queries são descritas como frases agrupadas, não como prompts completos.
+- [ ] Citation Share é explicado no contexto da consulta e da plataforma, não como participação geral de mercado.
+- [ ] Intents e Topics são tratados como classificações da ferramenta, não como verdade absoluta.
+- [ ] Os CSVs brutos foram preservados com data de coleta e filtro selecionado.
 
 ## Estrutura e legibilidade
 
@@ -63,4 +76,5 @@ Não existe marcação especial que garanta visibilidade em busca generativa. Pa
 - [ ] `llms.txt` não é apresentado como fator do Google; o Google declara que não o usa para visibilidade ou ranking.
 - [ ] O texto não foi artificialmente fragmentado em "chunks" para agradar sistemas de IA.
 - [ ] `FAQPage` não é apresentado como rich result do Google: o recurso deixou de ser exibido em maio de 2026.
+- [ ] Crescimento entre janelas não é apresentado como prova de que uma edição específica causou o resultado.
 

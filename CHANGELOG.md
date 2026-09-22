@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.1 - 2026-09-22
+
+Atualização do estudo de caso e da mensuração de visibilidade em IA.
+
+- Atualiza o snapshot do GSC para 23/08–19/09/2026: 53.371 impressões, 488 cliques e posição média 7,44.
+- Atualiza o Bing AI Performance para 16.648 citações na exportação coletada em 22/09/2026.
+- Documenta grounding queries, Citation Share, Intent, Topic, amostragem, diferenças entre visões e janelas móveis.
+- Adiciona um protocolo reproduzível de exportação e interpretação do Bing AI Performance.
+- Reforça na skill `backlinks` a matriz de proveniência dos dados e o acompanhamento pós-publicação sem alegações causais.
+
 ## v0.3.0 - 2026-09-19
 
 Atualização de método, portabilidade e transparência.

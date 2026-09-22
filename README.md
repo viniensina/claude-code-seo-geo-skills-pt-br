@@ -18,15 +18,16 @@ Estas skills são parte do motor editorial de um blog PT-BR sobre ferramentas de
 
 | Métrica | Valor |
 |---|---|
-| Google Search Console, 28d (19/08 a 15/09/2026) | **51.255 impressões** e **482 cliques** |
-| Crescimento vs janela anterior equivalente | **+59,5%** em impressões e **+13,4%** em cliques |
-| Média diária no Google | **1.830,5 impressões/dia** |
-| Posição média | **7,48**, ante **8,66** na janela anterior (menor é melhor) |
-| Bing AI Performance, 30d (leitura 09/08/2026) | **7.634 citações** em Microsoft Copilots and Partners |
-| Crescimento em IA | **+66,5%** comparando primeiros 7 dias vs últimos 7 dias da janela |
+| Google Search Console, 28d (23/08 a 19/09/2026) | **53.371 impressões** e **488 cliques** |
+| Crescimento vs janela anterior equivalente | **+58,5%** em impressões e **+13,0%** em cliques |
+| Média diária no Google | **1.906,1 impressões/dia** |
+| Posição média | **7,44**, ante **8,39** na janela anterior (menor é melhor) |
+| Bing AI Performance, exportação de 30d com 29 datas (23/08 a 20/09/2026) | **16.648 citações** em Microsoft Copilots and Partners |
+| Ritmo recente no Bing AI | **3.563 citações** nos últimos 7 dias, **+19,2%** vs 7 dias anteriores |
+| Página líder no Bing AI | [`/claude-sonnet-opus-haiku-diferenca/`](https://www.viniensina.com.br/claude-sonnet-opus-haiku-diferenca/) — **4.305 citações** |
 | Venda atribuída a IA | Compra real de R$19,90 após recomendação do ChatGPT, validada por GA4 + KV em 25/08/2026 |
 
-Esses números descrevem o site inteiro e **não provam causalidade** de uma skill isolada. Eles demonstram que o método é usado em produção e oferecem uma linha de base auditável. Veja períodos, limitações e exemplos em [`docs/case-study-september-2026.md`](docs/case-study-september-2026.md).
+Esses números descrevem o site inteiro e **não provam causalidade** de uma skill isolada. Citação também não equivale a clique, sessão, ranking ou autoridade. Os dados demonstram uso em produção e oferecem uma linha de base auditável. Veja períodos e limitações em [`docs/case-study-september-2026.md`](docs/case-study-september-2026.md) e o protocolo de exportação em [`docs/bing-ai-performance-methodology.md`](docs/bing-ai-performance-methodology.md).
 
 O padrão de conteúdo citável — resposta direta, dados rastreáveis, metodologia, fontes primárias e atribuição clara — está codificado na skill [`backlinks`](skills/backlinks/SKILL.md). Ele não promete ranking, backlink ou citação automática; reduz o atrito para leitores e sistemas que precisam verificar e atribuir uma informação.
 
@@ -63,6 +64,7 @@ Mesmo que você não use Claude Code, dá para reaproveitar partes deste repo co
 | [`Rank Math API notes`](docs/rank-math-api.md) | Snippets e cuidados para atualizar SEO on-page via API nativa do Rank Math. |
 | [`examples/`](examples/) | Exemplos de brief, artigo citável e checklist preenchido para adaptar no seu projeto. |
 | [`Case de setembro de 2026`](docs/case-study-september-2026.md) | Snapshot auditável do GSC e exemplos de como os sinais foram usados para priorizar revisões — sem confundir execução com resultado. |
+| [`Metodologia do Bing AI Performance`](docs/bing-ai-performance-methodology.md) | Como exportar, comparar e interpretar citações, páginas, consultas, intents e Citation Share sem extrapolar o dado. |
 
 ## Requisitos
 
