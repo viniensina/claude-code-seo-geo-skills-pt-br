@@ -13,6 +13,8 @@ Referências oficiais:
 - [Bing Webmaster Tools — AI Performance](https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c)
 - [Introducing AI Performance in Bing Webmaster Tools](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)
 
+Para automatizar os cálculos abaixo, use a skill [`ai-visibility-audit`](../skills/ai-visibility-audit/SKILL.md). O analisador preserva estados de linha ausente, mede a sobreposição entre snapshots e gera saídas em Markdown e JSON.
+
 ## Exportação reproduzível
 
 1. Selecione o período na interface.

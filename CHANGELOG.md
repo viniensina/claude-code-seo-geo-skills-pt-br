@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.4.0 - 2026-09-22
+
+Auditoria reproduzível de visibilidade em IA.
+
+- Adiciona a skill `ai-visibility-audit` para analisar exportações do Bing AI Performance.
+- Adiciona um analisador em Python, sem dependências externas, com saída em Markdown e JSON.
+- Calcula período real retornado, ritmo recente, concentração por página e diferenças entre Overview, Pages e Grounding queries.
+- Compara snapshots opcionais, mede sobreposição e preserva estados `not_returned` sem convertê-los em zero.
+- Inclui CSVs sintéticos, relatório de exemplo e testes automatizados.
+
 ## v0.3.1 - 2026-09-22
 
 Atualização do estudo de caso e da mensuração de visibilidade em IA.

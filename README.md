@@ -6,7 +6,7 @@
 [![WordPress](https://img.shields.io/badge/WordPress-REST%20API-21759b)](https://developer.wordpress.org/rest-api/)
 [![Rank Math](https://img.shields.io/badge/Rank%20Math-SEO-orange)](docs/rank-math-api.md)
 
-> **TL;DR (EN):** Production-grade Agent Skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Codex](https://developers.openai.com/pt-BR/docs/build-skills), built around a real Portuguese-language WordPress SEO workflow. They cover new articles, evidence-led content refreshes, data-backed citation assets, cover images, and Rank Math metadata. These are sanitized versions of workflows used on [viniensina.com.br](https://www.viniensina.com.br), not ranking guarantees.
+> **TL;DR (EN):** Production-grade Agent Skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Codex](https://developers.openai.com/pt-BR/docs/build-skills), built around a real Portuguese-language WordPress SEO workflow. They cover AI visibility audits, new articles, evidence-led content refreshes, data-backed citation assets, cover images, and Rank Math metadata. These are sanitized versions of workflows used on [viniensina.com.br](https://www.viniensina.com.br), not ranking guarantees.
 
 Skills de produção para operar um blog de SEO/GEO em português com Claude Code ou Codex. O repositório publica versões sanitizadas de fluxos usados no [viniensina.com.br](https://www.viniensina.com.br), com limites explícitos entre evidência, hipótese e resultado.
 
@@ -47,6 +47,7 @@ The project is a real production workflow, not a neutral template. Treat it as a
 
 | Skill | O que faz |
 |---|---|
+| [`ai-visibility-audit`](skills/ai-visibility-audit/SKILL.md) | Analisa exportações do Bing AI Performance, mede sobreposição entre snapshots e prioriza páginas sem confundir citação, tráfego e causalidade. |
 | [`blog-article`](skills/blog-article/SKILL.md) | Cria posts novos com pesquisa, conteúdo não comoditizado, HTML limpo, metadados e rascunho seguro no WordPress. |
 | [`backlinks`](skills/backlinks/SKILL.md) | Cria artigos de estatísticas verificáveis com fontes primárias, metodologia e atribuição clara, sem prometer backlinks ou citações. |
 | [`content-refresh`](skills/content-refresh/SKILL.md) | Audita e atualiza artigos existentes com evidência de GSC, checagem factual, decisão entre ajuste cirúrgico e reconstrução, QA e janela de maturação. |
@@ -63,6 +64,7 @@ Mesmo que você não use Claude Code, dá para reaproveitar partes deste repo co
 | [`WordPress publishing flow`](docs/wordpress-publishing-flow.md) | Fluxo seguro para rascunho, mídia, Rank Math, QA e publicação no WordPress. |
 | [`Rank Math API notes`](docs/rank-math-api.md) | Snippets e cuidados para atualizar SEO on-page via API nativa do Rank Math. |
 | [`examples/`](examples/) | Exemplos de brief, artigo citável e checklist preenchido para adaptar no seu projeto. |
+| [`Exemplo de auditoria de visibilidade`](examples/ai-visibility-audit-example.md) | Relatório completo gerado pelo analisador a partir de CSVs sintéticos e sanitizados. |
 | [`Case de setembro de 2026`](docs/case-study-september-2026.md) | Snapshot auditável do GSC e exemplos de como os sinais foram usados para priorizar revisões — sem confundir execução com resultado. |
 | [`Metodologia do Bing AI Performance`](docs/bing-ai-performance-methodology.md) | Como exportar, comparar e interpretar citações, páginas, consultas, intents e Citation Share sem extrapolar o dado. |
 
@@ -162,6 +164,7 @@ As skills podem ser acionadas implicitamente pela descrição ou mencionadas pel
 
 | Skill | Peça algo como |
 |---|---|
+| `ai-visibility-audit` | "Analise estas exportações do Bing AI, calcule a sobreposição com o snapshot anterior e indique páginas para defender, expandir e recuperar." |
 | `blog-article` | "Cria um artigo de blog sobre *como usar o n8n para marketing*, keyword `n8n para marketing`, foco em iniciante." |
 | `backlinks` | "Faz um artigo de estatísticas sobre *IA em anúncios pagos 2026* pra atrair backlinks e citação de IA." |
 | `content-refresh` | "Audita este artigo com os dados do GSC e aplica só as mudanças justificadas, preservando URL e conversão." |
@@ -177,6 +180,19 @@ A pasta [`examples/`](examples/) mostra como o método fica fora do abstrato:
 - [`brief-exemplo.md`](examples/brief-exemplo.md): briefing de artigo antes da escrita;
 - [`artigo-citavel-exemplo.md`](examples/artigo-citavel-exemplo.md): estrutura de página citável, com resposta rápida, tabela, metodologia, como citar e FAQ;
 - [`checklist-ai-citations-preenchido.md`](examples/checklist-ai-citations-preenchido.md): checklist aplicado antes de publicar.
+- [`ai-visibility-audit-example.md`](examples/ai-visibility-audit-example.md): relatório gerado automaticamente com dados sintéticos.
+
+O analisador da skill `ai-visibility-audit` usa somente a biblioteca padrão do Python:
+
+```bash
+python skills/ai-visibility-audit/scripts/analyze_ai_visibility.py \
+  --overview examples/bing-ai-export-example/overview.csv \
+  --pages examples/bing-ai-export-example/pages.csv \
+  --queries examples/bing-ai-export-example/queries.csv \
+  --previous-overview examples/bing-ai-export-example/previous-overview.csv \
+  --previous-pages examples/bing-ai-export-example/previous-pages.csv \
+  --output auditoria.md
+```
 
 Use esses arquivos como ponto de partida para adaptar a lógica ao seu nicho, idioma e CMS.
 
